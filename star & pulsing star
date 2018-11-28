@@ -1,0 +1,53 @@
+function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  background(240);
+
+
+  var angle=(sin(frameCount)+1)/2*(PI)/6;
+
+  var starSides = 5;
+  var angInc = TWO_PI/starSides;
+  var wiggle = (sin(frameCount)+1/2*PI/5;)
+
+  beginShape();
+  var radius = 100;
+  for(var a=0; a<starSides; a++){
+    //console.log(a);
+    var x = 100*cos(angInc*a)+width/2;
+    var y = 100*sin(angInc*a)+height/2;
+    vertex(x,y);
+
+    var x = 50*cos(angInc*a + angInc / 2)+width/2;
+    var y = 50*sin(angInc*a + angInc / 2)+height/2;
+    vertex(x, y);
+  }
+  endShape(CLOSE);
+
+
+//Pulsing Star
+/*function draw() {
+    background(240);
+
+    var starSides = 5;
+    var angInc = TWO_PI/starSides;
+    var wiggle=(sin(frameCount/10)+1)/2;
+
+
+    beginShape();
+    var radius = 100;
+    for(var a=0; a<starSides; a++){
+      var x = wiggle*100*cos(angInc*a)+width/2;
+      var y = wiggle*100*sin(angInc*a)+height/2;
+      vertex(x,y);
+
+      var x = wiggle*50*cos(angInc*a + angInc / 2)+width/2;
+      var y = wiggle*50*sin(angInc*a + angInc / 2)+height/2;
+
+  		//var y = sin(frameCount)*50*sin(angInc*a + angInc / 2)+height/2;
+      vertex(x, y);
+    }
+    endShape(CLOSE);
+*/
+  }
